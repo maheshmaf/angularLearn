@@ -1,0 +1,11 @@
+<div
+  class="alert"
+  [class.alert-danger]="isActive"
+  (click)="onClick()"
+  role="alert"
+>
+  {{ likesCount }}
+  : A simple warning alert with
+  <a href="#" class="alert-link">an example link</a>. Give it a click if you
+  like.
+</div>

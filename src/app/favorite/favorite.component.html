@@ -1,0 +1,12 @@
+<input [(ngModel)]="title" (change)="titleCase()" />
+
+<p>{{ title | titleCase }}</p>
+
+<div
+  [ngStyle]="{ width: '30px' }"
+  [class.bg-primary]="isFavorite"
+  [class.bg-secondary]="!isFavorite"
+  (click)="toggleBg()"
+>
+  .
+</div>
