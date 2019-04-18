@@ -8,16 +8,27 @@ import { Component, OnInit } from "@angular/core";
 })
 export class CourseComponent implements OnInit {
   title = "Courses List";
-  course = "Node";
   courses;
-
-  printCourse() {
-    console.log(this.course);
-  }
 
   constructor(service: CourseService) {
     this.courses = service.getCourses();
   }
+
+  addCourse = () => {
+    this.courses.push({
+      id: this.courses.length + 1,
+      name: "course" + (this.courses.length + 1)
+    });
+  };
+
+  removeCourse = course => {
+    this.courses.splice(this.courses.indexOf(course), 1);
+  };
+
+  //prevent rerender
+  trackCourse = (index, course) => {
+    return course ? course.id : undefined;
+  };
 
   ngOnInit() {}
 }

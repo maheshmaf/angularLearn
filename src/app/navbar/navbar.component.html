@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default navbar-dark bg-dark">
+  <ul class="navbar-nav" style="flex-direction: row;">
+    <li class="nav-item pr-3" routerLinkActive="active">
+      <a
+        class="nav-link"
+        routerLink="/followers"
+        [queryParams]="{ page: 1, order: 'new' }"
+        >Followers</a
+      >
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="/posts">Posts</a>
+    </li>
+  </ul>
+</nav>

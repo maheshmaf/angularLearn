@@ -1,0 +1,8 @@
+<div class="zippy">
+  <div class="heading" [class.expanded]="isExpanded" (click)="expand()">
+    {{ title }}
+  </div>
+  <div *ngIf="isExpanded" class="body">
+    <ng-content></ng-content>
+  </div>
+</div>

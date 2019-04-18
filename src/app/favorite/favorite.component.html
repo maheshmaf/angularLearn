@@ -4,8 +4,7 @@
 
 <div
   [ngStyle]="{ width: '30px' }"
-  [class.bg-primary]="isFavorite"
-  [class.bg-secondary]="!isFavorite"
+  [ngClass]="{ 'bg-primary': isFavorite, 'bg-secondary': !isFavorite }"
   (click)="toggleBg()"
 >
   .

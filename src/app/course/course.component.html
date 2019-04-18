@@ -1,5 +1,22 @@
 <h2>{{ title }}</h2>
-<input [(ngModel)]="course" (keyup.enter)="printCourse()" />
-<ul>
-  <li *ngFor="let course of courses">{{ course }}</li>
-</ul>
+
+<button (click)="addCourse()">Add</button>
+<div *ngIf="courses.length > 0; else noCourses">
+  <ul>
+    <li
+      *ngFor="
+        let course of courses;
+        index as i;
+        odd as isOdd;
+        trackBy: trackCourse
+      "
+    >
+      {{ i }}-{{ isOdd }} = {{ course.name }}
+      <button (click)="removeCourse(course)">Remove</button>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noCourses>
+  <h1>No Courses Found</h1>
+</ng-template>
